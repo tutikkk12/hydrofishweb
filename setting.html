@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HydroFish - Pengaturan Jadwal</title>
+  <link rel="icon" href="img/hydrofish.png" type="image/png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js" defer></script>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+
+  <!-- Firebase Config (jika Anda punya file config terpisah) -->
+  <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigasi -->
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon1"><ion-icon name="fish-outline"></ion-icon></span>
+            <span class="title1">HydroFish</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="history.html">
+            <span class="icon"><ion-icon name="archive-outline"></ion-icon></span>
+            <span class="title">History</span>
+          </a>
+        </li>
+        <li>
+          <a href="setting.html">
+            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+            <span class="title">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="main scrollable">
+      <div class="topbar">
+        <div class="toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Form Setting Jadwal -->
+      <form action="#" method="POST" class="settingBox">
+        <div class="setting-card">
+          <div class="setting-title">
+            <h2>Pengaturan Jadwal Pakan</h2>
+          </div>
+          <div class="setting-content">
+            <label for="jadwal_pagi">Jadwal Pagi:</label>
+            <input type="time" id="jadwal_pagi" name="jadwal_pagi" required />
+
+            <label for="jadwal_sore">Jadwal Sore:</label>
+            <input type="time" id="jadwal_sore" name="jadwal_sore" required />
+
+            <label for="jadwal_malam">Jadwal Malam:</label>
+            <input type="time" id="jadwal_malam" name="jadwal_malam" required />
+
+            <label for="jumlah_takar">Jumlah Takar (gram):</label>
+            <input type="number" id="jumlah_takar" name="jumlah_takar" min="1" required />
+          </div>
+          <button type="submit" class="saveButton">Simpan Jadwal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
