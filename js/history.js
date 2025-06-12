@@ -61,7 +61,7 @@ function renderPage() {
 
   renderChart(labels, tdsData, phData, suhuData, tinggiData);
 
-  pageIndicator.textContent = Halaman ${currentPage} dari ${Math.ceil(sensorData.length / itemsPerPage)};
+  pageIndicator.textContent = `Halaman ${currentPage} dari ${Math.ceil(sensorData.length / itemsPerPage)}`;
   prevBtn.disabled = currentPage === 1;
   nextBtn.disabled = end >= sensorData.length;
 }
@@ -78,7 +78,7 @@ function renderChart(labels, tdsData, phData, suhuData, tinggiData) {
         {
           label: 'TDS (ppm)',
           data: tdsData,
-          borderColor: '#89CFF0', // Baby Blue
+          borderColor: '#89CFF0',
           backgroundColor: 'rgba(137, 207, 240, 0.2)',
           fill: true,
           tension: 0.4
@@ -86,7 +86,7 @@ function renderChart(labels, tdsData, phData, suhuData, tinggiData) {
         {
           label: 'pH Air',
           data: phData,
-          borderColor: '#B0E57C', // Light Green
+          borderColor: '#B0E57C',
           backgroundColor: 'rgba(176, 229, 124, 0.2)',
           fill: true,
           tension: 0.4
@@ -94,7 +94,7 @@ function renderChart(labels, tdsData, phData, suhuData, tinggiData) {
         {
           label: 'Suhu Air (°C)',
           data: suhuData,
-          borderColor: '#FFE4A1', // Soft Yellow
+          borderColor: '#FFE4A1',
           backgroundColor: 'rgba(255, 228, 161, 0.2)',
           fill: true,
           tension: 0.4
@@ -102,7 +102,7 @@ function renderChart(labels, tdsData, phData, suhuData, tinggiData) {
         {
           label: 'Tinggi Air (cm)',
           data: tinggiData,
-          borderColor: '#FFB6C1', // Light Pink
+          borderColor: '#FFB6C1',
           backgroundColor: 'rgba(255, 182, 193, 0.2)',
           fill: true,
           tension: 0.4
@@ -139,7 +139,6 @@ function renderChart(labels, tdsData, phData, suhuData, tinggiData) {
   });
 }
 
-
 // Hapus data
 async function deleteData(id) {
   if (!id) {
@@ -149,7 +148,7 @@ async function deleteData(id) {
 
   if (confirm('Yakin ingin menghapus data ini?')) {
     try {
-      const response = await fetch(${API_URL}/${id}, {
+      const response = await fetch(`${API_URL}/${id}`, {
         method: 'DELETE'
       });
       const result = await response.json();
