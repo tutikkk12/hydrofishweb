@@ -7,14 +7,13 @@
   <title>HydroFish</title>
   <link rel="icon" href="img/hydrofish.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" />
-  
+
   <!-- External Libraries -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -50,7 +49,6 @@
 
     <!-- Main Content -->
     <main class="main scrollable">
-      <!-- Topbar -->
       <div class="topbar">
         <div class="toggle">
           <ion-icon name="menu-outline"></ion-icon>
@@ -58,7 +56,6 @@
       </div>
 
       <section class="tableBox">
-        <!-- Grafik Sensor -->
         <div class="table-card">
           <h3 class="table-title">Grafik Data Sensor</h3>
           <div class="chart-container" style="position: relative; height: 400px;">
@@ -66,7 +63,6 @@
           </div>
         </div>
 
-        <!-- Tabel Riwayat -->
         <div class="table-card">
           <h3 class="table-title">Riwayat Data Sensor</h3>
           <div class="table-wrapper">
@@ -79,16 +75,25 @@
                   <th>pH Air</th>
                   <th>Suhu Air (°C)</th>
                   <th>Tinggi Air (cm)</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody id="sensorDataBody">
-                <!-- Data akan diisi lewat JS -->
+                <!-- Data dari JS -->
               </tbody>
             </table>
+          </div>
+
+          <div id="paginationControls" style="text-align: center; margin-top: 20px;">
+            <button id="prevPage">Sebelumnya</button>
+            <span id="pageIndicator">Halaman 1</span>
+            <button id="nextPage">Berikutnya</button>
           </div>
         </div>
       </section>
     </main>
   </div>
+
+  <script src="js/history.js" defer></script>
 </body>
 </html>
